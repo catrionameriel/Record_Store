@@ -22,4 +22,11 @@ Customer.prototype.sellRecord = function (record) {
   return recordToSell[0];
 };
 
+Customer.prototype.getTotalOfCollection = function () {
+  let reducer = function(record, nextRecord) {
+    return record + nextRecord.price;
+  }
+  return this.collection.reduce(reducer, 0);
+};
+
 module.exports = Customer;

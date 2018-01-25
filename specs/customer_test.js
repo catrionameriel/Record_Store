@@ -45,4 +45,12 @@ var customer;
     assert.strictEqual(customer.collection.length, 0);
   })
 
+  it("can get total value of collection", function() {
+    store.addRecord(record);
+    store.addRecord(record1);
+    customer.buyRecord(store, record);
+    customer.buyRecord(store, record1);
+    assert.strictEqual(customer.getTotalOfCollection(), 24.5);
+  })
+
 })
